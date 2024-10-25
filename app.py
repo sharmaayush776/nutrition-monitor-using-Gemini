@@ -9,14 +9,10 @@ import streamlit.components.v1 as components
 load_dotenv(find_dotenv())
 
 # Configure Streamlit page settings
-st.set_page_config(page_title="Nutrition Monitor", page_icon="🥕", layout="wide")
+st.set_page_config(page_title="Nutrition Monitor", page_icon="🫛", layout="wide")
 
 # Configure Google Generative AI library with an API key from environment variables
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
-# Load the external CSS
-with open("style.css") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # Define a function to handle the response from Google Gemini API
 def get_gemini_response(input, image):
@@ -101,4 +97,4 @@ if submit:
             st.error(f"An unexpected error occurred: {str(e)}")
 
 # Footer
-st.markdown("<div class='footer'>🫛Track Your Plate, Transform Your Health🫛</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'></div>", unsafe_allow_html=True)
